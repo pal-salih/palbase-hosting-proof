@@ -3,5 +3,5 @@
 import http from 'node:http';
 http.createServer((req, res) => {
   res.setHeader('content-type', 'application/json');
-  res.end(JSON.stringify({ environment_secret: process.env.PROOF_SECRET ?? null, commit: process.env.PALBASE_COMMIT ?? null }));
+  res.end(JSON.stringify({ environment_secret: process.env.PROOF_SECRET ?? null, greeting: "hello from a fork", commit: process.env.PALBASE_COMMIT ?? null }));
 }).listen(Number(process.env.PORT ?? 8080));
